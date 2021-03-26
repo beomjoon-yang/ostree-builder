@@ -1,0 +1,3 @@
+# The file of console-setup dracut module, "null" couldn't commit to ostree repo, so remove it 
+
+rm /var/lib/dracut/console-setup-dir/etc/console-setup/null 

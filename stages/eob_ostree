@@ -79,8 +79,8 @@ rm -f "${EOB_ROOTDIR}"/{initrd.img,initrd.img.old,vmlinuz,vmlinuz.old}
 
 # setup /boot for non-runtime builds
 if [ "${EOB_OSTREE_TYPE}" != runtime ]; then
-  #pushd "${BOOT}"
-  pushd /boot
+  pushd "${BOOT}"
+  #pushd /boot
 
   vmlinuz_match=(vmlinuz*)
   vmlinuz_file=${vmlinuz_match[0]}
@@ -91,8 +91,10 @@ if [ "${EOB_OSTREE_TYPE}" != runtime ]; then
   csum=${csum#% *}
   echo "Boot boot sum: ${csum}"
 
-  cp ${vmlinuz_file} "${BOOT}"/${vmlinuz_file}-${csum}
-  cp ${initrd_file} "${BOOT}"/${initrd_file/initrd.img/initramfs}-${csum}
+  cp ${vmlinuz_file} ${vmlinuz_file}-${csum}
+  cp ${initrd_file}  ${initrd_file/initrd.img/initramfs}-${csum}
+  #cp ${vmlinuz_file} "${BOOT}"/${vmlinuz_file}-${csum}
+  #cp ${initrd_file} "${BOOT}"/${initrd_file/initrd.img/initramfs}-${csum}
 
   popd
 fi
@@ -157,7 +159,7 @@ if [ -n "${EOB_OSTREE_KEYID}" ]; then
       --gpg-homedir=${EOB_SYSCONFDIR}/gnupg
     )
 fi
-tmp_ostree --repo="${EOB_OSTREE_REPODIR}" commit "${COMMIT_ARGS[@]}" \
+tmp_ostree -v --repo="${EOB_OSTREE_REPODIR}" commit "${COMMIT_ARGS[@]}" \
   "${EOB_ROOTDIR}"
 
 # Additional refs to create pointing to the branch.
