@@ -171,6 +171,6 @@ done
 # All done with the tmp ostree and install root
 cleanup_tmp_ostree
 eob_umount_all
-rm -rf "${EOB_ROOTDIR}"
+#rm -rf "${EOB_ROOTDIR}"
 
 exit 0

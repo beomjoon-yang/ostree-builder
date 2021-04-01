@@ -131,5 +131,5 @@ def add_cli_options(argparser):
                            help='use current builder branch')
     argparser.add_argument('--lock-timeout', type=int, default=LOCKTIMEOUT,
                            help='time in seconds to acquire lock before exiting')
-    argparser.add_argument('branch', nargs='?', default='unstable',
+    argparser.add_argument('branch', nargs='?', default='bullseye',
                            help='branch to build')

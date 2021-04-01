@@ -1,7 +1,7 @@
 # Generate a initramfs image including an ostree dracut module
-# The package of ostree-boot is currently (2021.03) available on the buster-backports, bullseye (testing) and sid (unstable)
+# The package of ostree-boot is currently (2021.03) available on the bullseyei
 
-# for sid (2021.03)
 pkg_install linux-image-686-pae
 
+# from bullseye
 pkg_install ostree-boot

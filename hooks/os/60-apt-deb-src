@@ -2,8 +2,14 @@
 echo "deb-src ${EOB_OS_REPO} ${EOB_BRANCH} ${EOB_OS_COMPONENTS//,/ }" \
   >> "${EOB_ROOTDIR}"/etc/apt/sources.list
 
-echo "deb http://deb.debian.org/debian buster-backports main contrib non-tree" \
+#echo "deb http://220.90.208.56/tmax bullseye main contrib non-tree" \
+#       >> "${EOB_ROOTDIR}"/etc/apt/sources.list
+       
+#echo "deb-src http://220.90.208.56/tmax bullseye main contrib non-tree" \
+#       >> "${EOB_ROOTDIR}"/etc/apt/sources.list
+
+echo "deb http://deb.debian.org/debian bullseye main contrib non-tree" \
        >> "${EOB_ROOTDIR}"/etc/apt/sources.list
        
-echo "deb-src http://deb.debian.org/debian buster-backports main contrib non-tree" \
+echo "deb-src http://deb.debian.org/debian bullseye main contrib non-tree" \
        >> "${EOB_ROOTDIR}"/etc/apt/sources.list
